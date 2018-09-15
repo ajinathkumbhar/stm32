@@ -1,3 +1,10 @@
+Links:
+https://www.st.com/en/microcontrollers/stm32-32-bit-arm-cortex-mcus.html
+https://www.st.com/en/embedded-software/stm32-embedded-software.html?querycriteria=productId=SC961
+http://www.openstm32.org/HomePage
+https://www.aosabook.org/en/freertos.html
+https://barrgroup.com/Embedded-Systems/How-To/RTOS-Mutex-Semaphore
+
 //print string on UART
 HAL_UART_Transmit(&huart4, (uint8_t*)string, strlen(string), HAL_MAX_DELAY);
 
