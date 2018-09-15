@@ -1,6 +1,15 @@
 //print string on UART
 HAL_UART_Transmit(&huart4, (uint8_t*)string, strlen(string), HAL_MAX_DELAY);
 
+// LED ON OFF
+HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
+HAL_Delay(100);
+HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+HAL_Delay(100);
+
+// LED ON OFF toggle
+HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_1);
+HAL_Delay(100);
 
 // User defined logs
 //------------------------------------
