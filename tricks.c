@@ -18,8 +18,13 @@ HAL_Delay(100);
 HAL_GPIO_TogglePin(GPIOA,GPIO_PIN_1);
 HAL_Delay(100);
 
+
 // User defined logs
 //------------------------------------
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
+
 void Slog(const char *fmt, ...) // custom printf() function
 {
     va_list args;
@@ -55,4 +60,12 @@ void Led_Gatekeeper(void * pvParamerters) {
 		vTaskDelay(mxDelay);
 	}
 }
+
+// UART loop back
+uint8_t buffer[4];
+HAL_UART_Receive(&s_UARTHandle, buffer, sizeof(buffer), HAL_MAX_DELAY);
+HAL_UART_Transmit(&s_UARTHandle, buffer, sizeof(buffer), HAL_MAX_DELAY);
+
+
+
 
